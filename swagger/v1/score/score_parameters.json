@@ -1,0 +1,32 @@
+{
+  "requestBodies": {
+    "ScoreCreateRequest": {
+      "description": "Score create",
+      "required": true,
+      "content": {
+        "application/json": {
+          "schema": {
+            "$ref": "score_definations.json#/definitions/ScoreCreateParameters"
+          }
+        }
+      }
+    },
+    "CategoryImportRequest": {
+      "description": "category import request",
+      "required": true,
+      "content": {
+        "multipart/form-data": {
+          "schema": {
+            "type": "object",
+            "properties": {
+              "file": {
+                "type": "string",
+                "format": "binary"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ }

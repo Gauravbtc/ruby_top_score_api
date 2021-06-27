@@ -1,0 +1,33 @@
+{
+  "GetPlayerHistory": {
+    "get": {
+      "summary": "Player details",
+      "description": "it will list player history with top, worst, and avg score",
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "player"
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "required": true,
+          "description": "player_id"
+         }
+        ],
+      "consumes": [
+        "application/json"
+      ],
+      "responses": {
+        "200": {
+          "$ref": "player_response.json#/responses/PlayerResponse"
+         }
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "CreateScore": {
+    "post": {
+      "summary": "Create score of player",
+      "description": "it will create score of given player",
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "score"
+      ],
+      "consumes": [
+        "application/json"
+      ],
+      "requestBody":
+        {
+          "$ref": "score_parameters.json#/requestBodies/ScoreCreateRequest"
+        },
+      "responses": {
+        "200": {
+          "$ref": "score_responses.json#/responses/ScoreCreatedSuccessfully"
+         },
+        "400": {
+          "$ref": "score_responses.json#/responses/ScoreCreateFailureUnpermitedParameters"
+        }
+      }
+    },
+    "get": {
+      "summary": "Scores of players ",
+      "description": "Scores list",
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "score"
+      ],
+      "parameters": [
+        {
+          "in": "query",
+          "name": "players",
+          "schema": {
+            "type": "string"
+          },
+          "required": false,
+          "description": "Name of players"
+         },
+         {
+          "in": "query",
+          "name": "after",
+          "schema": {
+            "type": "string"
+          },
+          "required": false,
+          "description": "score after specific date"
+         },
+         {
+          "in": "query",
+          "name": "before",
+          "schema": {
+            "type": "string"
+          },
+          "required": false,
+          "description": "score before specific date"
+         },
+         {
+          "in": "query",
+          "name": "page",
+          "schema": {
+            "type": "string"
+          },
+          "required": false,
+          "description": "page number"
+         }
+        ],
+      "consumes": [
+        "application/json"
+      ],
+      "responses": {
+        "200": {
+          "$ref": "score_responses.json#/responses/ScoreList"
+         }
+      }
+    }
+  },
+  "GetScore": {
+    "get": {
+      "summary": "Get Score",
+      "description": "Get score",
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "score"
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "required": true,
+          "description": "score id"
+         }
+        ],
+      "consumes": [
+        "application/json"
+      ],
+      "responses": {
+        "200": {
+          "$ref": "score_responses.json#/responses/ScoreShow"
+         }
+      }
+    },
+    "delete": {
+      "summary": "Delete Score",
+      "description": "Delete score",
+      "produces": [
+        "application/json"
+      ],
+      "tags": [
+        "score"
+      ],
+      "parameters": [
+        {
+          "in": "path",
+          "name": "id",
+          "schema": {
+            "type": "string"
+          },
+          "required": true,
+          "description": "score id"
+         }
+        ],
+      "consumes": [
+        "application/json"
+      ],
+      "responses": {
+        "200": {
+          "$ref": "score_responses.json#/responses/ScoreDelete"
+         }
+      }
+    }
+  }
+}

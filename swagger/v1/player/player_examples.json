@@ -1,0 +1,37 @@
+{
+  "examples":{
+    "PlayerSuccessResponseExample":{
+      "value": {
+        "message": "Player details",
+        "status_code": 200,
+        "data": {
+            "id": "4035e911-5f59-4b30-b868-11a4ecd111e7",
+            "name": "gaurav",
+            "top_score": {
+                "score": 34,
+                "time": "2021-06-26T00:00:00.000Z"
+            },
+            "low_score": {
+                "score": 10,
+                "time": "2021-06-26T00:00:00.000Z"
+            },
+            "average_score": 21,
+            "history": [
+                {
+                    "score": 34,
+                    "time": "2021-06-26T00:00:00.000Z"
+                },
+                {
+                    "score": 10,
+                    "time": "2021-06-26T00:00:00.000Z"
+                },
+                {
+                    "score": 19,
+                    "time": "2021-06-25T00:00:00.000Z"
+                }
+            ]
+        }
+      }
+    }
+  }
+}

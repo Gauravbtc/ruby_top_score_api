@@ -1,0 +1,64 @@
+{
+    "responses": {
+      "ScoreCreatedSuccessfully": {
+        "description": "Score created",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200": {
+                "$ref": "score_examples.json#/examples/ScoreCreatedSuccessResponseExample"
+              }
+            }
+          }
+        }
+      },
+      "ScoreCreateFailureUnpermitedParameters": {
+        "description": "Unpermitted parameter in request payload",
+        "content": {
+          "application/json": {
+            "examples": {
+              "400-Failure": {
+               "$ref": "score_examples.json#/examples/ScoreCreateFailureUnpermitedParametersExample"
+              }
+            }
+          }
+        }
+      },
+      "ScoreShow": {
+        "description": "Score show",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200-Success": {
+                "$ref": "score_examples.json#/examples/ScoreShow"
+              }
+            }
+          }
+        }
+      },
+      "ScoreDelete": {
+        "description": "Delete score",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200-Success": {
+                "$ref": "score_examples.json#/examples/ScoreDelete"
+              }
+            }
+          }
+        }
+      },
+      "ScoreList": {
+        "description": "Score List",
+        "content": {
+          "application/json": {
+            "examples": {
+              "200": {
+                "$ref": "score_examples.json#/examples/ScoreList"
+              }
+            }
+          }
+        }
+      }
+    }
+  }

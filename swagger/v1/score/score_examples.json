@@ -1,0 +1,119 @@
+{
+    "examples":{
+      "ScoreCreatedSuccessResponseExample":{
+        "value": {
+          "message": "Score Created..",
+          "status_code": 200,
+          "data": {
+            "id": "0bc0cc8d-71f1-4710-a1ce-bc511713ab04",
+            "name": "david",
+            "score": 20,
+            "time": "2021-06-27T00:00:00.000Z"
+          },
+          "success": true
+        }
+      },
+      "ScoreCreateFailureUnpermitedParametersExample": {
+        "value": {
+          "success": false,
+          "message": "found unpermitted parameter: #{parameter_name}",
+          "status_code": 400,
+          "data": {}
+        }
+      },
+      "ScoreShow": {
+        "value": {
+          "message": "Score details",
+          "status_code": 200,
+          "data": {
+            "id": "0bc0cc8d-71f1-4710-a1ce-bc511713ab04",
+            "name": "david",
+            "score": 20,
+            "time": "2021-06-27T00:00:00.000Z"
+          },
+          "success": true
+        }
+      },
+      "ScoreDelete": {
+        "value": {
+          "message": "Score Deleted",
+          "status_code": 200,
+          "data": {},
+          "success": true
+        }
+      },
+      "ScoreList": {
+        "value": {
+          "data": [
+            {
+              "id": "4035e911-5f59-4b30-b868-11a4ecd111e7",
+              "name": "gaurav",
+              "scores": [
+                {
+                  "id": "3709f5e6-af78-4afd-b0c6-d15a341894a4",
+                  "score": 34,
+                  "time": "2021-06-26T00:00:00.000Z"
+                },
+                {
+                  "id": "6bc735b1-a011-4d2a-b6e4-f5a8d53dfd24",
+                  "score": 10,
+                  "time": "2021-06-26T00:00:00.000Z"
+                },
+                {
+                  "id": "a3efb829-5321-4864-ad30-55a1f75fb543",
+                  "score": 19,
+                  "time": "2021-06-25T00:00:00.000Z"
+                }
+              ]
+            },
+            {
+              "id": "32f3c73c-e091-411c-a37c-43a8a4dfcdf3",
+              "name": "shiv",
+              "scores": [
+                {
+                  "id": "2e5e6e62-b215-4bb1-b8cd-65f33e15b51d",
+                  "score": 10,
+                  "time": "2021-06-26T00:00:00.000Z"
+                },
+                {
+                  "id": "7be20e08-3dc7-427d-b6bb-4244d467c60d",
+                  "score": 10,
+                  "time": "2021-10-20T00:00:00.000Z"
+                },
+                {
+                  "id": "ec6d16e1-7a5d-45be-91f2-0f9a65169bba",
+                  "score": 10,
+                  "time": "2021-12-12T00:00:00.000Z"
+                }
+              ]
+            },
+            {
+              "id": "667e7e05-f245-488b-b222-c56ecadcbf72",
+              "name": "santo",
+              "scores": [
+                {
+                  "id": "f0533ea8-e0b7-4ce3-86a1-af19663d6c89",
+                  "score": 10,
+                  "time": "2021-12-12T00:00:00.000Z"
+                }
+              ]
+            },
+            {
+              "id": "d759a895-9e99-432f-96bc-797095a3f9c5",
+              "name": "david",
+              "scores": [
+                {
+                  "id": "0bc0cc8d-71f1-4710-a1ce-bc511713ab04",
+                  "score": 20,
+                  "time": "2021-06-27T00:00:00.000Z"
+                }
+              ]
+            }
+          ],
+          "page": 1,
+          "total_count": 4,
+          "success": true
+        }
+      }
+    }
+  }

@@ -1,0 +1,251 @@
+{
+    "definitions":{
+      "ScoreCreateParameters":{
+        "description": "Score create parameters.",
+        "type":"object",
+        "required":[
+          "name",
+          "score",
+          "time"
+        ],
+         "properties":{
+          "score":{
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Player name"
+              },
+              "score": {
+                "type": "integer",
+                "description": "score of player"
+              },
+              "time": {
+                "type": "string",
+                "description": "time when score logged"
+              }
+            }
+          }
+        },
+        "example": {
+          "score": {
+            "name": "david",
+            "score": 20,
+            "time": "2021-06-27"
+          }
+        }
+     },
+      "ZaikoUpdateParametersResponse":{
+        "description": "category zaiko update response",
+        "type":"object",
+        "required":[
+          "success",
+          "message",
+          "status_code",
+          "data"
+        ],
+        "properties":{
+          "success":{
+            "type":"boolean",
+            "description":" status"
+          },
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          },
+          "data": {
+            "type": "object",
+            "description": "category object"
+          }
+        }
+      },
+      "ZaikoUpdateErrorsParametersResponse": {
+        "description": "Unpermited Parameters or Category code not found",
+        "type":"object",
+        "required":[
+          "success",
+          "message",
+          "status_code"
+        ],
+        "properties":{
+          "success":{
+            "type":"boolean",
+            "description":" status"
+          },
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          },
+          "data": {
+            "type": "object",
+            "description": "Error details"
+          }
+        }
+      },
+      "ImportParametersResponse": {
+        "description": "File upload parameters response",
+        "type":"object",
+        "required":[
+          "success",
+          "message",
+          "status_code"
+        ],
+        "properties":{
+          "success":{
+            "type":"boolean",
+            "description":" status"
+          },
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          }
+        }
+      },
+      "CategoryListResponse": {
+        "description": "Category list response",
+        "type":"object",
+        "required":[
+          "message",
+          "status_code",
+          "data"
+        ],
+        "properties":{
+          "message":{
+            "type":"string",
+            "description":"Error message for developers."
+          },
+          "status_code":{
+            "type":"integer",
+            "description":"Status code"
+          },
+          "data": {
+            "type": "object",
+            "properties": {
+              "category_code": {
+                "type": "string",
+                "description": "category_code"
+              },
+              "category_name": {
+                "type": "string",
+                "description": "category name"
+              },
+              "category_key": {
+                "type": "string",
+                "description": "category key"
+              },
+              "parent_category_code": {
+                "type": "string",
+                "description": "parent category code"
+              },
+              "priority": {
+                "type": "integer",
+                "description": "priority for category"
+              },
+              "tags": {
+                "type": "string",
+                "description": "tags for category"
+              },
+              "zaiko": {
+                "type": "integer",
+                "description": "zaiko for category"
+              },
+              "image_url": {
+                "type": "string",
+                "description": "category image url"
+              },
+              "slug": {
+                "type": "string",
+                "description": "slug for category"
+              },
+              "start_timestamp": {
+                "type": "integer",
+                "description": "start start_timestamp of category"
+              },
+              "end_timestamp": {
+                "type": "integer",
+                "description": "end_timestamp of category"
+              },
+              "status": {
+                "type": "string",
+                "description": "status of category"
+              },
+              "category_attributes": {
+                "type": "object",
+                "description": "category extra attributes"
+              },
+              "categories": {
+                "type": "object",
+                "description": "sub categories details",
+                "properties": {
+                  "category_code": {
+                    "type": "string",
+                    "description": "category_code"
+                  },
+                  "category_name": {
+                    "type": "string",
+                    "description": "category name"
+                  },
+                  "category_key": {
+                    "type": "string",
+                    "description": "category key"
+                  },
+                  "parent_category_code": {
+                    "type": "string",
+                    "description": "parent category code"
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "description": "priority for category"
+                  },
+                  "tags": {
+                    "type": "string",
+                    "description": "tags for category"
+                  },
+                  "zaiko": {
+                    "type": "integer",
+                    "description": "zaiko for category"
+                  },
+                  "image_url": {
+                    "type": "string",
+                    "description": "category image url"
+                  },
+                  "slug": {
+                    "type": "string",
+                    "description": "slug for category"
+                  },
+                  "start_timestamp": {
+                    "type": "integer",
+                    "description": "start start_timestamp of category"
+                  },
+                  "end_timestamp": {
+                    "type": "integer",
+                    "description": "end_timestamp of category"
+                  },
+                  "status": {
+                    "type": "string",
+                    "description": "status of category"
+                  },
+                  "category_attributes": {
+                    "type": "object",
+                    "description": "category extra attributes"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+   }
+ }

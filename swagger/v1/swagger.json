@@ -1,0 +1,28 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ruby Top Score API Documentation",
+    "description": "Detailed explanation of Ruby top score API",
+    "version": "2020-07-15"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "servers": [
+    {
+      "url": "http://localhost:3000/"
+    }
+  ],
+  "paths": {
+    "/api/v1/scores": {
+     "$ref": "score/score_path.json#/CreateScore"
+    },
+    "/api/v1/scores/{id}": {
+      "$ref": "score/score_path.json#/GetScore"
+    },
+    "/api/v1/player/{id}/history": {
+      "$ref": "player/player_path.json#/GetPlayerHistory"
+    }
+  }
+}

@@ -1,0 +1,213 @@
+{
+  "definitions":{
+    "RecenltyCheckItemParameters":{
+      "description": "Recenlty check item parameters.",
+      "type":"object",
+      "required":[
+        "checked_in_timestamp",
+        "customer_code",
+        "item_code",
+        "attributes"
+      ],
+       "properties":{
+        "checked_item":{
+          "type": "object",
+          "properties": {
+            "checked_in_timestamp": {
+              "type": "string"
+            },
+            "customer_code": {
+              "type": "string"
+            },
+            "item_code": {
+              "type": "string"
+            },
+            "attributes": {
+              "type": "object"
+            }
+          }
+        }
+      },
+      "example": {
+        "checked_item": {
+          "checked_in_timestamp": "1595810222414",
+          "customer_code": "22508119",
+          "item_code": "1000242003986",
+          "attributes": {}
+        }
+      }
+    },
+    "RecenltyCheckItemParametersResponse":{
+      "description": "Recenlty Check item parameters response",
+      "type":"object",
+      "required":[
+        "success",
+        "message",
+        "status_code",
+        "data"
+      ],
+      "properties":{
+        "success":{
+          "type":"boolean",
+          "description":" status"
+        },
+        "message":{
+          "type":"string",
+          "description":"Error message for developers."
+        },
+        "status_code":{
+          "type":"integer",
+          "description":"Status code"
+        },
+        "data": {
+          "type": "object",
+          "description": "data object"
+        }
+      }
+    },
+    "RecenltyCheckItemViewRequestParameters": {
+      "description": "Display Recenlty viewd items by customer",
+      "type":"object",
+      "required":[
+        "query",
+        "sort"
+      ],
+      "properties":{
+        "query":{
+          "type": "object",
+          "description": "query parameters",
+          "properties": {
+            "bool": {
+              "type": "object",
+              "properties": {
+                "filter": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "term": {
+                        "type": "object",
+                        "properties": {
+                          "customer_code": {
+                            "type": "string",
+                            "description": "customer_code or vendor_code"
+                          }
+                        }
+                      },
+                      "range": {
+                        "type": "object",
+                        "properties": {
+                          "checked_in_timestamp": {
+                            "type": "object",
+                            "properties": {
+                              "get": {
+                                "type": "integer",
+                                "description": "pass 3 month agao date from current date and time ie current date is 19/08/2020 then you have to pass 19/05/2020"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "example": {
+        "query": {
+          "bool": {
+            "filter": [
+              {
+                "term": {
+                  "customer_code": "22508119"
+                }
+              },
+              {
+                "range": {
+                  "checked_in_timestamp": {
+                    "gte": 1589856468
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    },
+    "RecenltyCheckItemViewRequestResponse": {
+      "description": "Recenlty checked item response",
+      "type":"object",
+      "required":[
+        "took",
+        "timed_out",
+        "_shards",
+        "hits"
+      ],
+      "properties":{
+        "took":{
+          "type": "integer",
+          "description": "time taken"
+        },
+        "timed_out":{
+          "type": "boolean",
+          "description": "request time out or not"
+        },
+        "_shards":{
+          "type": "object",
+          "description": "_shards details"
+        },
+        "hits": {
+          "type": "object",
+          "description": "data object",
+          "properties": {
+            "_index": {
+              "type": "string",
+              "description": "index name of elastic search"
+            },
+            "_type": {
+              "type": "string",
+              "description": "document type"
+            },
+            "_id": {
+              "type": "string",
+              "description": "customer_code or vendor_code"
+            },
+            "_score": {
+              "type": "integer",
+              "description": "search score as per elastic search"
+            },
+            "_source": {
+              "type": "object",
+              "description": "data object of recently checked items",
+              "properties": {
+                "customer_code": {
+                  "type": "string",
+                  "description": "customer_code or vendor_code"
+                },
+                "checked_in_timestamp": {
+                  "type": "string",
+                  "description": "date time stamp when user last visit any item"
+                },
+                "item_codes": {
+                  "type": "array",
+                  "description": "item codes associated with customer"
+                },
+                "attributes": {
+                  "type": "object",
+                  "description": "extra attributes of recently checked items"
+                }
+              }
+            },
+            "sort": {
+              "type": "array",
+              "description": "sort filed name ie checked_in_timestamp "
+            }
+          }
+        }
+      }
+    }
+  }
+}

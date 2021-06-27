@@ -1,0 +1,16 @@
+{
+  "responses": {
+    "PlayerResponse": {
+      "description": "Player responses",
+      "content": {
+        "application/json": {
+          "examples": {
+            "200": {
+              "$ref": "player_examples.json#/examples/PlayerSuccessResponseExample"
+            }
+          }
+        }
+      }
+    }
+  }
+}
