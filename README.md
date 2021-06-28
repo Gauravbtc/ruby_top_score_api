@@ -45,3 +45,14 @@ rails db:migrate
 rails s
 ```
 
+## API Document 
+
+[Swagger Doc](http//localhost:3000/api-docs/index.html)
+
+## Run Specs 
+
+```bash
+bundle exec rails db:migrate -e test
+
+bundle exec rspec
+```
