@@ -2,8 +2,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: gaurav
-  password: gaurav
+  username: # username
+  password: # password
 
 development:
   <<: *default
@@ -15,7 +15,7 @@ test:
 
 production:
   <<: *default
-  database: omdb_production
+  database: top_ranking_api_production
   username: omdb
   password: <%= ENV['OMDB_DATABASE_PASSWORD'] %>
 
