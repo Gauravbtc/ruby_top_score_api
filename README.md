@@ -56,3 +56,30 @@ bundle exec rails db:migrate -e test
 
 bundle exec rspec
 ```
+
+## Project Structure
+This application has two models 
+
+i) Player: Contain Player information such as name
+ 
+ii) Score: Contain Player score information
+  
+
+- ```ruby Score.by_players(player_names)``` it will retrieve player score information, player names can be pass in an array 
+- ```ruby Score.before_time(date)``` it will retrive score before specfic date 
+- ```ruby Score.after_time(date)``` it will retrive score after specific date
+
+
+## API
+It can be divided into two controllers 
+
+- Score Controller 
+  - POST {host}//api/v1/scores for it will create socre of player 
+  - GET {host}//api/v1/scores/{id} retrive score information 
+  - DELETE {host}//api/v1/scores/{id}  Remove score 
+  - GET {host}//api/v1/scores?players=player1&before=2021-06-29T20:18:00Z&after=2021-06-29T20:20:20Z&page=1 
+    as a players parameters you can pass palyer names, in before and after paramter you need to pass date and in page yoy need to pass page number based on that score will be retived
+
+ - Player Controller 
+   - GET {host}//api/v1/player/{id}/history  you need to pass player id 
+      based on that player score history will retrieve it contains the player best score, worst score, and avg score stats along with their entire score history   
