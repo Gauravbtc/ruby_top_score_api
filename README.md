@@ -65,9 +65,9 @@ i) Player: Contain Player information such as name
 ii) Score: Contain Player score information
   
 
-- ```ruby Score.by_players(player_names)``` it will retrieve player score information, player names can be pass in an array 
-- ```ruby Score.before_time(date)``` it will retrive score before specfic date 
-- ```ruby Score.after_time(date)``` it will retrive score after specific date
+- ``` Score.by_players(player_names)``` it will retrieve player score information, player names can be pass in an array 
+- ``` Score.before_time(date)``` it will retrive score before specfic date 
+- ```Score.after_time(date)``` it will retrive score after specific date
 
 
 ## API
