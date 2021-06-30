@@ -82,4 +82,8 @@ It can be divided into two controllers
 
  - Player Controller 
    - GET {host}//api/v1/player/{id}/history  you need to pass player id 
-      based on that player score history will retrieve it contains the player best score, worst score, and avg score stats along with their entire score history   
+      based on that player score history will retrieve it contains the player best score, worst score, and avg score stats along with their entire score history 
+      
+      
+## Swagger Document
+![swagger](https://user-images.githubusercontent.com/16643699/123958668-49e02b00-d9e8-11eb-995e-6ee7d04a6a97.png)
